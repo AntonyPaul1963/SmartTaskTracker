@@ -33,3 +33,27 @@ A mini full-stack productivity application built with **React** (frontend) and *
   - Simple and clean layout for usability
 ## 🚀 Live Demo
 https://smart-task-tracker-iq9p.vercel.app/
+
+
+## 🛠️ Setup Steps (Full Stack)
+
+🔹 1. Clone the repository
+
+
+git clone https://github.com/AntonyPaul1963/SmartTaskTracker.git
+cd SmartTaskTracker
+🔹 2. Backend Setup (FastAPI)
+
+cd backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+🔹 3. Frontend Setup (React)
+Open a new terminal:
+
+
+cd frontend
+npm install
+npm start  
