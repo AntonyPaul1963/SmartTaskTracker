@@ -11,7 +11,7 @@ export default function TaskCard({ task, onUpdate }) {
 
   const toggleComplete = async () => {
     try {
-      await axios.put(`https://smarttasktracker.railway.internal/tasks/${task.id}`, {
+      await axios.put(`https://smarttasktracker-production.up.railway.app/tasks/${task.id}`, {
         completed: !task.completed,
       });
       onUpdate();
@@ -23,7 +23,7 @@ export default function TaskCard({ task, onUpdate }) {
   const deleteTask = async () => {
     if (!window.confirm("Delete this task?")) return;
     try {
-      await axios.delete(`https://smarttasktracker.railway.internal/tasks/${task.id}`);
+      await axios.delete(`https://smarttasktracker-production.up.railway.app/tasks/${task.id}`);
       onUpdate();
     } catch (err) {
       console.error("Failed to delete task", err);
@@ -32,7 +32,7 @@ export default function TaskCard({ task, onUpdate }) {
 
   const saveEdits = async () => {
     try {
-      await axios.put(`https://smarttasktracker.railway.internal/tasks/${task.id}`, {
+      await axios.put(`https://smarttasktracker-production.up.railway.app/tasks/${task.id}`, {
         title: editTask.title,
         description: editTask.description,
         category: editTask.category,
