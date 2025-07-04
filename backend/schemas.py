@@ -23,7 +23,6 @@ class TaskCreate(BaseModel):
     category: Optional[str] = ""
     position: Optional[int] = 0
     completed: Optional[bool] = False
-    priority: Optional[str] = "Low"  # ✅ New field for priority
 
 class TaskUpdate(BaseModel):
     title: Optional[str] = None
@@ -31,7 +30,6 @@ class TaskUpdate(BaseModel):
     category: Optional[str] = None
     completed: Optional[bool] = None
     position: Optional[int] = None
-    priority: Optional[str] = None  # ✅ Allow updating priority
 
 # ----------------------
 # 🧾 RESPONSE SCHEMA
@@ -44,7 +42,6 @@ class TaskOut(BaseModel):
     category: Optional[str]
     completed: bool
     position: Optional[int]
-    priority: Optional[str]  # ✅ Show priority in API response
 
     class Config:
         orm_mode = True
