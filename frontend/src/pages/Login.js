@@ -9,7 +9,7 @@ export default function Login() {
 
   const login = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/login", {
+      const res = await axios.post("smarttasktracker-production.up.railway.app/login", {
         username,
         password,
       });
