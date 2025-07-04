@@ -20,7 +20,7 @@ export default function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("smarttasktracker-production.up.railway.app/tasks",{withCredentials: true});
+      const res = await axios.get("https://smarttasktracker-production.up.railway.app/tasks",{withCredentials: true});
       setTasks(res.data);
     } catch (err) {
       console.error("Error fetching tasks", err);
@@ -32,7 +32,7 @@ export default function Dashboard() {
     if (!newTask.title.trim()) return;
 
     try {
-      await axios.post("smarttasktracker-production.up.railway.app/tasks", {
+      await axios.post("https://smarttasktracker-production.up.railway.app/tasks", {
         title: newTask.title,
         description: newTask.description,
         category: newTask.category,
@@ -68,7 +68,7 @@ export default function Dashboard() {
 
       // Fetch AI Priority
       axios
-        .post("smarttasktracker-production.up.railway.app/ai/priority", null, {
+        .post("https://smarttasktracker-production.up.railway.app/ai/priority", null, {
           params: { title: newTask.title },
           withCredentials: true,
         })
@@ -77,7 +77,7 @@ export default function Dashboard() {
 
       // Check for Duplicates
       axios
-        .post("smarttasktracker-production.up.railway.app/ai/duplicate", null, {
+        .post("https://smarttasktracker-production.up.railway.app/ai/duplicate", null, {
           params: { title: newTask.title },
           withCredentials: true,
         })

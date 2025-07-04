@@ -9,7 +9,7 @@ export default function Register() {
 
   const register = async () => {
     try {
-      await axios.post("smarttasktracker-production.up.railway.app/register", { username, password });
+      await axios.post("https://smarttasktracker-production.up.railway.app/register", { username, password });
       alert("Registration successful");
       navigate("/");
     } catch (err) {
